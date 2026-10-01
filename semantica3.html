@@ -1,0 +1,247 @@
+<!DOCTYPE html> 
+<html lang="es"> 
+
+<head> 
+    <link href="https://fonts.googleapis.com/css2?family=Caudex:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <meta charset="UTF-8"> 
+    <title>Estructura con Columnas</title> 
+
+    <style> 
+        header { 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            background-color: #88fff5; 
+            padding: 10px 20px; 
+        } 
+
+        .barra-navegacion { 
+            display: flex; 
+            gap: 15px; 
+            margin-top: 10px; 
+        } 
+
+        .boton-nav { 
+            text-decoration: none; 
+            color: rgb(103, 234, 244); 
+            background-color: rgb(188, 255, 252); 
+            padding: 6px 12px; 
+            border-radius: 4px; 
+            font-size: 14px; 
+            font-family: 'Caudex', serif; 
+            font-weight: bold;
+            transition: all 0.3s; 
+        } 
+        
+        .boton-nav:hover { 
+            background-color: mediumpurple; 
+            color: aliceblue; 
+        } 
+
+        .boton-nav.activo { 
+            background-color: rgb(188, 255, 252); 
+            color: rgb(103, 234, 244); 
+            font-weight: bold; 
+        } 
+
+        /* Logo circular */
+        .logo-pequeno { 
+            width: 90px;          
+            height: 90px;         
+            border-radius: 50%;   
+            object-fit: cover;    
+            box-shadow: 0 2px 5px rgba(0,0,0,0.15); 
+            border: 3px solid rgb(93, 183, 235); 
+        } 
+
+        /* CONTENEDOR PRINCIPAL */
+        main { 
+            display: flex;
+            width: 100%;
+            box-sizing: border-box;
+            gap: 15px;
+            padding: 20px;
+            align-items: stretch;
+        }
+
+        /* COLUMNA DEL ANUNCIO */
+        aside { 
+            width: 25%; 
+            background-color: #f3b5f3; 
+            padding: 15px; 
+            box-sizing: border-box;
+        } 
+
+        /* COLUMNA DEL CONTENIDO */
+        section { 
+            width: 75%; 
+            background-color: #a2e8fa; 
+            padding: 30px;
+            box-sizing: border-box;
+        }
+
+        section h2 { 
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+
+        /* TEXTO */
+        section p {
+            text-align: justify;
+            line-height: 1.5;
+            max-width: 850px;
+            margin: 0;
+            font-size: 18px;
+            font-family: 'Caudex', serif;
+        }
+
+        /* IMAGEN DEL ANUNCIO */
+        .anuncio-lateral img { 
+            width: 100%; 
+            height: 700px; 
+            object-fit: cover; 
+            border-radius: 10px; 
+            display: block; 
+        }
+
+        /* PIE DE PÁGINA */
+        footer {
+            background-color: #f6f8f8;
+            text-align: center;
+            padding: 15px;
+            font-family: 'Caudex', serif;
+        }
+
+        footer a {
+            color: rgb(170, 33, 85);
+            text-decoration: none;
+        }
+
+        .logo-instagram {
+            width: 25px;
+            height: 25px;
+            vertical-align: middle;
+            margin-right: 5px;
+        }
+
+                    .titulo-anuncio {
+            color: azure;               /* Color del texto */
+            font-size: 28px;            /* Letra más grande (antes 18px) */
+            font-family: 'Caudex', serif;
+            text-align: center;         /* Centrado */
+            margin-top: 2;              /* Quita espacio de arriba */
+            margin-bottom: 50px;        /* ESTO SEPARA EL TEXTO DE LA FOTO (antes estaba en 0) */
+            line-height: 1.3;           /* Espacio entre líneas si el texto es largo */
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.3); /* Sombra suave para que resalte */
+        }
+
+        /* IMAGEN CENTRADA */
+        .imagen-centro {
+            display: block;           
+            margin: 0 auto 25px auto; 
+            width: 100%;              
+            max-width: 800px;         
+            height: auto;             
+            border: 6px solid #aecdfc;
+            border-radius: 12px;      
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2); 
+        }
+
+        body {
+            font-family: 'Caudex', serif; 
+            margin: 0;
+            padding: 0;
+            background-color: #e5eece;
+        }
+
+        /* --- ESTILO PARA LOS DATOS CURIOSOS --- */
+        .dato-curioso {
+            margin-bottom: 25px;      
+            padding: 15px;            
+            background-color: rgba(255, 255, 255, 0.4); 
+            border-radius: 8px;       
+            border-left: 5px solid #4a148c; 
+            
+            text-align: justify;      
+            text-align-last: center;  
+            font-family: 'Caudex', serif; 
+            font-size: 16px;
+            line-height: 1.6;         
+            color: #333;
+        }
+
+        .dato-curioso strong {
+            color: #4a148c;           
+            font-weight: 700;         
+            font-size: 1.1em;         
+        }
+    </style> 
+</head> 
+
+
+<body> 
+
+    <header> 
+        <div> 
+            <h1 style="margin: 0;">Mi Pagina Web</h1> 
+            <nav class="barra-navegacion"> 
+                <a href="semantica.html" class="boton-nav">Rainbow Dash</a> 
+                <a href="semantica2.html" class="boton-nav">Fluttershy</a> 
+                <a href="semantica3.html" class="boton-nav activo">Amistad</a> 
+            </nav> 
+        </div> 
+
+        <img src="imagenes/burrita.jpg" alt="Logo de Mi Sitio Web" class="logo-pequeno"> 
+    </header> 
+
+
+    <main> 
+        <!-- ANUNCIO -->
+        <aside class="anuncio-lateral"> 
+            <h3 class="titulo-anuncio">¡Takis que incendian sabor unico!</h3>
+            <img src="imagenes/CHEE.jpg" alt="Anuncio"> 
+        </aside> 
+
+
+        <!-- CONTENIDO -->
+        <section> 
+            <article> 
+                <!-- Aquí puedes poner una imagen sobre la amistad -->
+                <img src="imagenes/amistad.jpg" alt="Amistad" class="imagen-centro">
+
+                <h2>🌈La Amistad🍥 </h2> 
+
+                <p>
+                    La amistad es uno de los temas centrales de My Little Pony: La Magia de la Amistad.
+                    A lo largo de la serie, Twilight Sparkle y sus amigas nos enseñan que la verdadera
+                    amistad es un vínculo mágico que se construye con confianza, respeto y cariño.
+                </p> 
+
+                <p>
+                    Cada una de las seis protagonistas representa un elemento diferente: la honestidad,
+                    la bondad, la risa, la generosidad, la lealtad y la magia. Juntas demuestran que
+                    trabajar en equipo y apoyarse mutuamente hace que cualquier obstáculo sea más fácil de superar.
+                </p>
+
+                <div class="dato-curioso">
+                    <strong>DATO ESPECIAL:</strong> La amistad es la magia más poderosa de todas, capaz de unir a ponis, dragones, grifos y hasta a los enemigos más inesperados. ✨💖
+                </div>
+
+            </article> 
+        </section> 
+    </main> 
+
+
+    <footer> 
+        <p>
+            creado por: seguraarizbeth@gmail.com
+            Instagram:
+            <a href="https://www.instagram.com/ghosteuni/" target="_blank">
+                <img src="imagenes/instagram.png" alt="Instagram" class="logo-instagram">
+                @ghosteuni
+            </a>
+        </p>
+    </footer> 
+
+</body> 
+</html>
